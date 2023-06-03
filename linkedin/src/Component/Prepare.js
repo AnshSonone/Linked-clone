@@ -18,6 +18,7 @@ import FlipMove from "react-flip-move";
 const Prepare = () => {
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
+  const [close, setClose] = useState(false);
   const user = useSelector(selectUser);
 
   useEffect(() => {
@@ -58,12 +59,27 @@ const Prepare = () => {
     }
   };
 
+  const handelClose = () => {
+    let closeIcon = document.getElementById("closeIcon");
+    if (close !== true) {
+      closeIcon.style.display = "none";
+    } else {
+      closeIcon.style.display = "block";
+    }
+  };
+
   return (
     <div className="sm:w-fit overflow-y-hidden">
-      <div className="bg-white mt-2 py-4 sm:rounded-md sm:w-[35rem] shadow-sm md:border-[1px] border-gray-200 ">
+      <div
+        className="bg-white mt-2 py-4 sm:rounded-md sm:w-[35rem] shadow-sm md:border-[1px] border-gray-200 "
+        id="closeIcon"
+      >
         <div className="flex items-cente justify-between  mx-3 my-2">
           <p className="font-bold text-xl">People for you job search</p>
-          <ClearOutlinedIcon />
+          <ClearOutlinedIcon
+            className="cursor-pointer"
+            onClick={() => handelClose(setClose(true))}
+          />
         </div>
         <div className=" my-2 mx-3 flex items-center space-x-3">
           <div className="bg-gray-300 h-[8px] w-[75%] rounded-md"></div>
