@@ -1,6 +1,16 @@
 # Linked-clone
 creating Linkedin clone using react and firebase
 
+Website - https://linkedin-clone-6bfc4.web.app/
+
+steps to use website
+1. fill all the fields.
+2. after filling all field click on signup
+3. then click on signin
+   
+note- if after signin white page is showing refresh the page
+
+
 Getting Started with Create React App
 This project was bootstrapped with Create React App.
 
